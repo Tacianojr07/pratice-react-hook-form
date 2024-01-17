@@ -5,8 +5,9 @@ import { FaLock } from "react-icons/fa";
 import InputIcon from "../../../components/InputIcon";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { DevTool } from "@hookform/devtools";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 
 type FormValues = {
   email: string;
@@ -14,19 +15,30 @@ type FormValues = {
 };
 
 function Login() {
+  const schema = z.object({
+    email: z.string().min(1, "can't be void").email(),
+    password: z.string().min(6, "can't be void"),
+  });
+
   const form = useForm<FormValues>({
     defaultValues: {
       email: "",
       password: "",
     },
+    resolver: zodResolver(schema),
+    mode: "onSubmit",
   });
 
-  const { register, handleSubmit, getValues, control, formState } = form;
-  const { errors } = formState;
+  const { register, handleSubmit, getValues, control, formState, reset } = form;
+  const { errors, isSubmitSuccessful } = formState;
 
-  function oSbumit(data: FormValues) {
-    console.log(data);
-  }
+  function oSbumit(data: FormValues) {}
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <Styles.Container>
@@ -55,7 +67,6 @@ function Login() {
 
         <Link href={"#"}>Esqueceu senha?</Link>
       </Styles.Form>
-      <DevTool control={control} />
     </Styles.Container>
   );
 }
