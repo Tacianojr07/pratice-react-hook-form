@@ -49,16 +49,34 @@ export const ListItem = styled.a<ButtonProps>`
 `;
 
 export const Main = styled.main`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 26px;
 `;
 
 export const Aside = styled.aside`
   img {
-    height: 330px;
+    height: 250px;
     width: 100%;
     margin-bottom: 10px;
+  }
+`;
+
+export const Section = styled.section`
+  h2 {
+    font-size: 70px;
+    font-weight: 900;
+  }
+  p {
+    font-size: 35px;
+  }
+  button {
+    background: #fff;
+    color: #3574c0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
   }
 `;

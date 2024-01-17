@@ -10,18 +10,20 @@ export default function Home() {
       <Styles.Header>
         <h1>CHAT.IO </h1>
         <Styles.List>
-          <Styles.ListItem href={"#"}>Login</Styles.ListItem>
+          <Styles.ListItem href={"/login"}>Login</Styles.ListItem>
           <Styles.ListItem href={"#"}>Register</Styles.ListItem>
         </Styles.List>
       </Styles.Header>
       <Styles.Main>
-        <section>
+        <Styles.Section>
           <h2>Have your</h2>
           <h2>best chat</h2>
           <p>Fast,easy & unlimited team chat</p>
 
-          <button>Try it free</button>
-        </section>
+          <div>
+            <button>Try it free</button>
+          </div>
+        </Styles.Section>
         <Styles.Aside>
           <Image
             src={
@@ -32,10 +34,6 @@ export default function Home() {
             alt="talking"
             quality={100}
           />
-          <p>
-            have fun chatting with your friends and family with our app you can
-            send emojis and photos come create your account and enjoy
-          </p>
         </Styles.Aside>
       </Styles.Main>
     </Styles.Container>
