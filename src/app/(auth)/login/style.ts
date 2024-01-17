@@ -25,6 +25,7 @@ export const Form = styled.form`
   justify-content: center;
   gap: 30px;
   background-color: #fff;
+  position: relative;
 
   button {
     background: ${({ theme }) => ColorsTheme.colors.primary};
@@ -39,6 +40,11 @@ export const Form = styled.form`
       background-color: #b3bdc9;
       color: ${({ theme }) => ColorsTheme.colors.primary};
     }
+  }
+  a {
+    text-decoration: solid;
+    color: blue;
+    margin-left: 150px;
   }
 `;
 
