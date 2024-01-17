@@ -61,7 +61,9 @@ function Login() {
             type="password"
             placeholder="digite sua senha"
           />
-          <p style={{ color: "red" }}>{errors.password?.message}</p>
+          <p style={{ color: "red", fontSize: "11" }}>
+            {errors.password?.message}
+          </p>
         </div>
         <button>Login</button>
 

@@ -46,6 +46,18 @@ export const Form = styled.form`
     color: blue;
     margin-left: 150px;
   }
+
+  @media (max-width: 655px) {
+    max-width: 330px;
+    height: 370px;
+
+    a {
+      margin-left: 25px;
+    }
+    p {
+      position: absolute;
+    }
+  }
 `;
 
 export const Input = styled.input`

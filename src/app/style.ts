@@ -52,12 +52,20 @@ export const Main = styled.main`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 26px;
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 `;
 
 export const Aside = styled.aside`
   img {
     height: 250px;
     width: 100%;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 740px) {
     margin-bottom: 10px;
   }
 `;

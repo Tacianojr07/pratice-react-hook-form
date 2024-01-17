@@ -11,7 +11,7 @@ export default function Home() {
         <h1>CHAT.IO </h1>
         <Styles.List>
           <Styles.ListItem href={"/login"}>Login</Styles.ListItem>
-          <Styles.ListItem href={"#"}>Register</Styles.ListItem>
+          <Styles.ListItem href={"/register"}>Register</Styles.ListItem>
         </Styles.List>
       </Styles.Header>
       <Styles.Main>
